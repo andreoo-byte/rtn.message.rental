@@ -3,261 +3,379 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RTN Secret Rental | Elite Mechanical Male Wellness</title>
-    <!-- Tailwind CSS Engine for Fluid Mobile-First UI -->
+    <title>RTN Secret Rental • Private Pleasure</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        rtnBlue: '#00D2FF',
-                        rtnDeep: '#0052FF',
-                        rtnDark: '#030712',
-                        rtnCard: '#0B1220',
-                        rtnBorder: '#1E293B'
-                    }
-                }
-            }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
         }
-    </script>
-    <!-- FontAwesome Vector Architecture -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        
+        .heading-font {
+            font-family: 'Playfair Display', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://picsum.photos/id/1015/2000/1200') center/cover;
+        }
+
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .modal {
+            animation: modalPop 0.3s ease forwards;
+        }
+        
+        @keyframes modalPop {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
 </head>
-<body class="bg-rtnDark text-gray-300 font-sans antialiased selection:bg-rtnBlue selection:text-black">
+<body class="bg-zinc-950 text-zinc-200">
+    <!-- NAVBAR -->
+    <nav class="bg-black border-b border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl">R</div>
+                <div>
+                    <span class="heading-font text-3xl font-bold tracking-tighter">RTN</span>
+                    <span class="text-blue-400 text-sm block -mt-1 tracking-[2px]">SECRET RENTAL</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest">
+                <a href="#shop" class="nav-link hover:text-blue-400">Shop</a>
+                <a href="#how" class="nav-link hover:text-blue-400">How it Works</a>
+                <a href="#safety" class="nav-link hover:text-blue-400">Safety &amp; Privacy</a>
+                <a href="#faq" class="nav-link hover:text-blue-400">FAQ</a>
+            </div>
 
-    <!-- TOP ANONYMITY BANNER -->
-    <div class="bg-rtnBlue/10 border-b border-rtnBlue/20 text-center py-2.5 text-[11px] font-bold text-rtnBlue tracking-widest uppercase px-4">
-        <i class="fa-solid fa-user-secret mr-1.5 text-xs animate-pulse"></i> Complete Discretion Guarded. Statement ID: "RTN Automatic Massager Unit"
-    </div>
-
-    <!-- MAIN CONTROL NAV -->
-    <nav class="sticky top-0 z-40 bg-rtnDark/90 backdrop-blur-md border-b border-gray-900 px-4 md:px-8 h-20 flex items-center justify-between">
-        <div class="flex items-center space-x-3">
-            <div class="bg-rtnBlue w-7 h-7 rounded flex items-center justify-center text-black font-black text-sm tracking-tighter">R</div>
-            <span class="text-lg font-black tracking-widest text-white uppercase">RTN <span class="text-rtnBlue">SECRET</span></span>
+            <div class="flex items-center gap-4">
+                <button onclick="showCart()" 
+                        class="flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 px-5 py-2.5 rounded-2xl text-sm font-medium transition">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cart-count" class="text-blue-400">0</span>
+                </button>
+                <button onclick="toggleMobileMenu()"
+                        class="md:hidden w-11 h-11 flex items-center justify-center text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
         </div>
-        <div class="hidden lg:flex space-x-8 text-[11px] font-bold uppercase tracking-widest text-gray-400">
-            <a href="#catalog" class="hover:text-rtnBlue transition">Browse Inventory</a>
-            <a href="#no-judgment" class="hover:text-rtnBlue transition">The Oath</a>
-            <a href="#science" class="hover:text-rtnBlue transition">Anatomical Risks</a>
-            <a href="#sanitization" class="hover:text-rtnBlue transition">Sterilization Lifecycle</a>
-            <a href="#rules" class="hover:text-rtnBlue transition">Hourly Terms</a>
-        </div>
-        <a href="#catalog" class="bg-rtnBlue hover:bg-cyan-400 text-black text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded transition font-mono">
-            Rent Unit
-        </a>
     </nav>
 
-    <!-- MAIN HEADER BLOCK -->
-    <header class="py-12 md:py-16 text-center px-4 max-w-3xl mx-auto">
-        <span class="text-[10px] font-mono font-bold tracking-widest uppercase text-rtnBlue bg-rtnBlue/5 border border-rtnBlue/20 px-3 py-1 rounded">
-            Anatomical Reconditioning Protocol
-        </span>
-        <h1 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mt-5 mb-4 leading-tight">
-            Stop Using Your Hands.<br><span class="text-rtnBlue">Protect Your Sensitivity.</span>
-        </h1>
-        <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-            Manual habits generate unnatural, crushing physical loads. Step up to medical-grade, anatomical simulation chambers constructed to safeguard performance—retained through completely isolated private rentals.
-        </p>
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-black z-50 pt-20 px-6">
+        <div class="flex flex-col gap-6 text-xl">
+            <a href="#shop" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-800">Shop Toys</a>
+            <a href="#how" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-800">How it Works</a>
+            <a href="#safety" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-800">Safety First</a>
+            <a href="#faq" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-800">FAQ</a>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <header class="hero-bg h-screen flex items-center relative">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-2 rounded-3xl text-sm mb-6">
+                <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                Discreet • Private • Real Experience
+            </div>
+            
+            <h1 class="heading-font text-6xl md:text-7xl font-bold leading-none mb-6">
+                PRIVATE PLEASURE,<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">DELIVERED SECRETLY</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-zinc-400 max-w-lg mx-auto mb-10">
+                Premium dick massagers. Sanitized. Discreet delivery in plain packaging. 
+                No one will ever know.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="document.getElementById('shop-section').scrollIntoView({ behavior: 'smooth' })" 
+                        class="bg-blue-600 hover:bg-blue-500 transition px-10 py-5 rounded-3xl text-lg font-semibold flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-bolt"></i>
+                    RENT NOW - ₹500/hr
+                </button>
+                <button onclick="showCouponModal()" 
+                        class="border border-white/30 hover:border-white/60 transition px-8 py-5 rounded-3xl text-lg font-medium">
+                    Get 20% OFF
+                </button>
+            </div>
+
+            <div class="mt-16 flex justify-center gap-8 text-sm">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-green-400"></i>
+                    <span>100% Sanitized</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-lock text-amber-400"></i>
+                    <span>Identity Hidden</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-truck text-blue-400"></i>
+                    <span>Delivered in Plain Bag</span>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- CATALOG MODULE (PLACED ON TOP) -->
-    <section id="catalog" class="py-10 bg-rtnCard/40 border-t border-gray-900 px-4">
-        <div class="max-w-5xl mx-auto">
-            <div class="mb-8 text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-2">
+    <!-- TRUST BAR -->
+    <div class="bg-zinc-900 py-4 border-b border-zinc-800">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-3 md:grid-cols-6 gap-6 text-center text-xs md:text-sm">
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-hand-holding-heart text-2xl mb-1 text-blue-400"></i>
+                <div>No Judgement</div>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-virus-covid-slash text-2xl mb-1 text-emerald-400"></i>
+                <div>Medical Grade Sanitized</div>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-clock text-2xl mb-1 text-amber-400"></i>
+                <div>Flexible Hours</div>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-ban text-2xl mb-1 text-red-400"></i>
+                <div>Hands-Free Pleasure</div>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-box text-2xl mb-1 text-purple-400"></i>
+                <div>Plain Packaging</div>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-heart-pulse text-2xl mb-1 text-pink-400"></i>
+                <div>Real Feel Experience</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <section id="shop-section" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <span class="uppercase tracking-widest text-blue-400 text-sm font-medium">Available Now</span>
+                <h2 class="heading-font text-5xl font-bold">Our Premium Dick Massagers</h2>
+            </div>
+            <div class="hidden md:block text-right">
+                <div class="text-4xl font-semibold text-blue-400">₹500 <span class="text-base font-normal text-zinc-400">/ hour</span></div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Item 1 - Available -->
+            <div class="product-card bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800">
+                <div class="h-80 bg-zinc-800 relative">
+                    <img src="https://picsum.photos/id/1015/600/600" 
+                         class="w-full h-full object-cover" alt="Female Torso Massager">
+                    <div class="absolute top-4 right-4 bg-green-500 text-black text-xs font-bold px-4 py-1 rounded-2xl">IN STOCK</div>
+                    <div class="absolute bottom-4 left-4 bg-black/70 px-3 py-1 rounded-2xl text-xs flex items-center gap-1">
+                        <i class="fa-solid fa-star text-yellow-400"></i> 4.98
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="text-2xl font-semibold">RealFeel Torso X1</h3>
+                            <p class="text-zinc-400">Dual Entry • Realistic Skin</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-3xl font-bold text-blue-400">₹500</div>
+                            <div class="text-xs text-zinc-500">per hour</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-2 mb-6">
+                        <span onclick="selectDuration(this)" class="duration-tag active px-4 py-2 bg-zinc-800 hover:bg-blue-950 rounded-2xl text-sm cursor-pointer">3 Hours</span>
+                        <span onclick="selectDuration(this)" class="duration-tag px-4 py-2 bg-zinc-800 hover:bg-blue-950 rounded-2xl text-sm cursor-pointer">6 Hours</span>
+                        <span onclick="selectDuration(this)" class="duration-tag px-4 py-2 bg-zinc-800 hover:bg-blue-950 rounded-2xl text-sm cursor-pointer">12 Hours</span>
+                    </div>
+
+                    <button onclick="addToCart(1, 'RealFeel Torso X1', 500)" 
+                            class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 py-6 rounded-3xl font-semibold text-lg hover:brightness-110 transition">
+                        RENT THIS MASSAGER
+                    </button>
+                    
+                    <div onclick="chooseNewToy(1)" 
+                         class="mt-4 text-center text-blue-400 text-sm cursor-pointer hover:underline">
+                        + New Toy (First Use) — +40%
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 - Coming Soon -->
+            <div class="product-card bg-zinc-900/70 rounded-3xl overflow-hidden border border-dashed border-zinc-700 opacity-75">
+                <div class="h-80 bg-zinc-800 relative flex items-center justify-center">
+                    <img src="https://picsum.photos/id/201/600/600" 
+                         class="w-full h-full object-cover grayscale" alt="Advanced Model">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/60">
+                        <div class="text-center">
+                            <div class="uppercase text-amber-400 tracking-widest text-sm mb-2">Coming Soon</div>
+                            <div class="text-3xl font-bold">Ultra Realistic V2</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <p class="text-zinc-400">Dual entry • Heating • Vibration</p>
+                    <button disabled class="w-full mt-6 py-6 bg-zinc-800 text-zinc-500 rounded-3xl font-medium">
+                        Notify me when available
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 3 - Coming Soon -->
+            <div class="product-card bg-zinc-900/70 rounded-3xl overflow-hidden border border-dashed border-zinc-700 opacity-75">
+                <div class="h-80 bg-zinc-800 relative flex items-center justify-center">
+                    <img src="https://picsum.photos/id/866/600/600" 
+                         class="w-full h-full object-cover grayscale" alt="Premium Model">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/60">
+                        <div class="text-center">
+                            <div class="uppercase text-amber-400 tracking-widest text-sm mb-2">Coming Soon</div>
+                            <div class="text-3xl font-bold">Fantasy Edition</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <p class="text-zinc-400">Multiple textures • Advanced features</p>
+                    <button disabled class="w-full mt-6 py-6 bg-zinc-800 text-zinc-500 rounded-3xl font-medium">
+                        Notify me when available
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="bg-black py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 class="text-2xl font-black text-white uppercase tracking-tight">Active Deployment Core</h2>
-                    <p class="text-gray-500 text-xs mt-0.5">Dispatched strictly in anonymous logistics housing containers.</p>
-                </div>
-                <div class="bg-gray-900 border border-gray-800 px-3 py-1.5 rounded text-xs font-mono flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-                    <span class="text-gray-400">System Rate Base: <strong class="text-white">₹500/Hr</strong></span>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                
-                <!-- INVENTORY SLOT 1: ACTIVE FOR HIRE -->
-                <div class="bg-rtnCard border border-gray-800 rounded-xl overflow-hidden flex flex-col justify-between hover:border-rtnBlue/30 transition duration-300">
-                    <div class="p-5 md:p-6">
-                        <div class="w-full h-44 bg-rtnDark rounded-lg flex flex-col items-center justify-center text-gray-600 mb-5 relative border border-gray-900">
-                            <i class="fa-solid fa-layer-group text-3xl mb-1 text-rtnBlue/20"></i>
-                            <span class="text-[9px] font-mono tracking-widest uppercase text-rtnBlue bg-rtnBlue/5 border border-rtnBlue/20 px-2 py-0.5 rounded">UNIT STOCK AVAILABLE</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white uppercase tracking-wide">RTN Core Torso Mk-IV</h3>
-                        <p class="text-[10px] text-rtnBlue font-mono uppercase tracking-widest mb-3">Dual Input Matrix: Posterior & Anterior Architecture</p>
-                        <p class="text-gray-400 text-xs leading-relaxed mb-5">
-                            High-mass, ultra-premium lifelike anatomical lower torso module. Formulated with dynamic internal resistance chambers replicating precise physical thermal response. Engineered to provide comprehensive $360^\circ$ safe pressure dispersion.
-                        </p>
-                        
-                        <!-- CHOOSE YOUR DURATION CONTROLS -->
-                        <div class="border-t border-gray-900 pt-4">
-                            <label class="block text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-2">
-                                <i class="fa-solid fa-clock-rotate-left text-rtnBlue mr-1"></i> Select Rental Frame:
-                            </label>
-                            <div class="grid grid-cols-3 gap-2 mb-3">
-                                <button onclick="setDurationFrame(2)" id="frame-btn-2" class="frame-btn py-2 text-xs font-mono font-bold rounded bg-rtnBlue text-black border border-rtnBlue">2 Hrs</button>
-                                <button onclick="setDurationFrame(4)" id="frame-btn-4" class="frame-btn py-2 text-xs font-mono font-bold rounded bg-rtnDark text-gray-400 border border-gray-800 hover:border-gray-700">4 Hrs</button>
-                                <button onclick="setDurationFrame(8)" id="frame-btn-8" class="frame-btn py-2 text-xs font-mono font-bold rounded bg-rtnDark text-gray-400 border border-gray-800 hover:border-gray-700">8 Hrs</button>
-                            </div>
-                            <div class="flex items-center justify-between bg-rtnDark/80 p-2 rounded border border-gray-900">
-                                <span class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Custom Allocation:</span>
-                                <div class="flex items-center space-x-1.5">
-                                    <input type="number" id="manual-hours" min="1" max="48" value="2" oninput="manualHoursSync(this.value)" class="w-12 bg-rtnDark border border-gray-800 text-center text-xs rounded text-white font-mono p-1 focus:outline-none focus:border-rtnBlue">
-                                    <span class="text-[10px] uppercase font-mono text-gray-500">Hours</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="p-5 md:p-6 pt-0 border-t border-gray-900 bg-rtnDark/30">
-                        <!-- UNUSED ITEM OPTION MARKUP CHECKS -->
-                        <div class="my-3">
-                            <label class="flex items-start gap-2.5 bg-rtnDark/80 p-3 rounded border border-gray-900 cursor-pointer select-none hover:border-gray-800 transition">
-                                <input type="checkbox" id="brand-new-modifier" onchange="runTotalMatrixCalculation()" class="mt-0.5 accent-rtnBlue h-3.5 w-3.5 rounded">
-                                <div class="text-left">
-                                    <span class="text-xs font-bold text-white block uppercase tracking-wide">Brand New Factory Sealed (+40% Premium)</span>
-                                    <span class="text-[10px] text-gray-500 block leading-tight mt-0.5">Triggers dispatch of an unsealed, original-box system dedicated exclusively to your use footprint.</span>
-                                </div>
-                            </label>
-                        </div>
-
-                        <!-- LIVE MATRIX PRICING STRIP -->
-                        <div class="flex items-center justify-between pt-2">
+                    <h2 class="heading-font text-5xl font-bold mb-8">Why thousands choose RTN</h2>
+                    <div class="space-y-10">
+                        <div class="flex gap-6">
+                            <div class="text-5xl text-blue-500">01</div>
                             <div>
-                                <span class="text-[9px] text-gray-500 uppercase tracking-widest block font-bold">Total Rental Estimate</span>
-                                <span id="master-live-price" class="text-xl font-black text-rtnBlue font-mono">₹1,000.00</span>
+                                <h3 class="text-2xl font-semibold mb-2">Better than hands</h3>
+                                <p class="text-zinc-400">Repeated hand use can cause desensitization and skin damage. Our realistic massagers give you intense, natural pleasure without any long-term harm.</p>
                             </div>
-                            <button onclick="executeSecureDispatch('RTN Core Torso Mk-IV')" class="bg-rtnBlue hover:bg-cyan-400 text-black font-black text-[11px] uppercase tracking-wider px-5 py-3 rounded transition font-mono">
-                                Execute Dispatch
-                            </button>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="text-5xl text-blue-500">02</div>
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-2">Ultra Clean Every Time</h3>
+                                <p class="text-zinc-400">Every toy is professionally cleaned, sanitized with hospital-grade solutions and vacuum sealed before delivery.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="text-5xl text-blue-500">03</div>
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-2">Completely Anonymous</h3>
+                                <p class="text-zinc-400">No names on packages. Cash-on-delivery available. Your neighbors and family will never know.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- INVENTORY SLOT 2: RESERVED COMING SOON -->
-                <div class="bg-rtnCard border border-gray-950 rounded-xl overflow-hidden flex flex-col justify-between relative opacity-20 select-none">
-                    <div class="absolute inset-0 bg-rtnDark/60 backdrop-blur-[1px] z-10 flex flex-col items-center justify-center text-center p-4">
-                        <div class="bg-gray-950 border border-gray-800 px-4 py-2.5 rounded-lg shadow-2xl">
-                            <i class="fa-solid fa-lock text-rtnBlue/60 text-xs mb-1 block"></i>
-                            <span class="text-xs font-black text-white tracking-widest uppercase block">Restocking Lifecycle</span>
-                            <span class="text-[9px] text-gray-500 uppercase tracking-wide font-mono">Queue Updates Next Week</span>
+                
+                <div class="bg-zinc-900 rounded-3xl p-10">
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center gap-2 bg-emerald-900 text-emerald-300 px-6 py-3 rounded-3xl">
+                            <i class="fa-solid fa-check"></i>
+                            <span class="font-medium">Guaranteed Fresh &amp; Clean</span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="w-full h-44 bg-rtnDark rounded-lg flex flex-col items-center justify-center text-gray-800 mb-4">
-                            <i class="fa-solid fa-circle-nodes text-3xl"></i>
-                        </div>
-                        <h3 class="text-base font-bold text-gray-600 uppercase">RTN Linear Pocket Tube</h3>
-                        <p class="text-gray-700 text-xs mt-2">Compact high-frequency concentric pressure massager unit framework.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ZERO JUDGMENT POLICY OATH -->
-    <section id="no-judgment" class="py-12 bg-gradient-to-b from-rtnDark to-rtnCard text-center px-4 border-t border-gray-900">
-        <div class="max-w-2xl mx-auto">
-            <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-900 border border-gray-800 text-rtnBlue mb-4 text-lg">
-                <i class="fa-solid fa-fingerprint"></i>
-            </div>
-            <h2 class="text-xl md:text-2xl font-black text-white uppercase tracking-tight mb-3">Absolute Neutrality. Zero Judgment.</h2>
-            <p class="text-gray-400 text-xs md:text-sm leading-relaxed">
-                Physical investigation and anatomy maintenance are basic personal requirements. We operate with high-level medical warehouse parameters. We do not maintain identities, we do not query backgrounds, and we ensure personal space remains fully private. To our operations team, these are mechanical simulation systems.
-            </p>
-        </div>
-    </section>
-
-    <!-- CLINICAL ANALYSIS: WHY HANDS GENERATE DAMAGE -->
-    <section id="science" class="py-16 bg-rtnCard border-y border-gray-900 px-4">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center max-w-xl mx-auto mb-10">
-                <h2 class="text-2xl font-black text-white uppercase tracking-tight">The Degradation of Manual Mechanical Stress</h2>
-                <p class="text-rtnBlue font-mono text-[11px] uppercase tracking-wider mt-1">Why modern physical habits lower natural nerve sensitivity</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-6 text-left">
-                <div class="p-6 bg-rtnDark rounded-lg border border-gray-900">
-                    <div class="w-10 h-10 rounded-full bg-rtnBlue/5 border border-rtnBlue/20 flex items-center justify-center text-rtnBlue mb-4 text-sm"><i class="fa-solid fa-bolt-lightning"></i></div>
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wide mb-2">Localized Crush Pressures</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">Human fingers compress tissue unevenly, forcing hyper-concentrated friction loads onto fine vessels. This mechanical mismatch gradually desensitizes peripheral sensory nerve ending arrays.</p>
-                </div>
-                <div class="p-6 bg-rtnDark rounded-lg border border-gray-900">
-                    <div class="w-10 h-10 rounded-full bg-rtnBlue/5 border border-rtnBlue/20 flex items-center justify-center text-rtnBlue mb-4 text-sm"><i class="fa-solid fa-heart-crack"></i></div>
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wide mb-2">Micro-Tear Scar Architecture</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">Dry, unlubricated manual friction causes microscopic shearing fractures across superficial skin layers, building tough micro-scar defensive blockages over time.</p>
-                </div>
-                <div class="p-6 bg-rtnDark rounded-lg border border-gray-900">
-                    <div class="w-10 h-10 rounded-full bg-rtnBlue/5 border border-rtnBlue/20 flex items-center justify-center text-rtnBlue mb-4 text-sm"><i class="fa-solid fa-dna"></i></div>
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wide mb-2">True Uniform Emulation</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed">RTN modules use synthetic engineering chambers to ensure uniform $360^\circ$ concentric resistance. Replicating internal body temperatures protects natural pathways.</p>
+                    <img src="https://picsum.photos/id/1015/800/600" class="rounded-3xl w-full shadow-2xl" alt="Clean process">
+                    <p class="text-center mt-8 text-zinc-400">Every massager is deep-cleaned, UV sanitized and comes with lubricant sachets.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- STERILIZATION GUARANTEE LOGISTICS -->
-    <section id="sanitation" class="py-14 bg-rtnDark px-4">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center max-w-xl mx-auto mb-10">
-                <h2 class="text-xl md:text-2xl font-black text-white uppercase tracking-wide">
-                    <i class="fa-solid fa-shield-virus text-rtnBlue mr-1.5"></i> Comprehensive Medical Sterilization Lifecycle
-                </h2>
-                <p class="text-gray-500 text-xs mt-1">Every returned unit proceeds down a highly enforced clinical decontamination pipeline.</p>
+    <!-- HOW IT WORKS -->
+    <section id="how" class="max-w-7xl mx-auto px-6 py-20">
+        <h2 class="heading-font text-5xl font-bold text-center mb-16">How Secret Rental Works</h2>
+        
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="w-20 h-20 mx-auto bg-blue-900/50 rounded-3xl flex items-center justify-center text-4xl mb-6">1</div>
+                <h4 class="font-semibold text-xl mb-2">Choose &amp; Book</h4>
+                <p class="text-zinc-400">Select your massager, duration and optional new-toy upgrade.</p>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div class="p-4 bg-rtnCard rounded-lg border border-gray-900">
-                    <i class="fa-solid fa-shower text-rtnBlue text-xl mb-2 block"></i>
-                    <h4 class="text-xs font-bold text-white uppercase mb-1">1. Cleansing Wash</h4>
-                    <p class="text-[10px] text-gray-500 leading-normal">High-pressure clean out using antimicrobial solution matrices.</p>
+            <div class="text-center">
+                <div class="w-20 h-20 mx-auto bg-blue-900/50 rounded-3xl flex items-center justify-center text-4xl mb-6">2</div>
+                <h4 class="font-semibold text-xl mb-2">Discreet Delivery</h4>
+                <p class="text-zinc-400">Delivered anywhere in India in a plain black plastic bag within 24-48 hrs.</p>
+            </div>
+            <div class="text-center">
+                <div class="w-20 h-20 mx-auto bg-blue-900/50 rounded-3xl flex items-center justify-center text-4xl mb-6">3</div>
+                <h4 class="font-semibold text-xl mb-2">Enjoy Privately</h4>
+                <p class="text-zinc-400">Experience the most realistic sensation possible. Return when done.</p>
+            </div>
+            <div class="text-center">
+                <div class="w-20 h-20 mx-auto bg-blue-900/50 rounded-3xl flex items-center justify-center text-4xl mb-6">4</div>
+                <h4 class="font-semibold text-xl mb-2">Easy Return</h4>
+                <p class="text-zinc-400">We pick it up. Late return = ₹1000 penalty. No extensions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section id="safety" class="bg-gradient-to-b from-zinc-900 to-black py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="heading-font text-5xl font-bold mb-6">Your Pleasure. Your Privacy.</h2>
+            <p class="text-2xl text-zinc-400 mb-12">We don't judge. We only deliver satisfaction.</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-zinc-900 p-8 rounded-3xl">
+                    <i class="fa-solid fa-shield-halved text-6xl text-blue-500 mb-6"></i>
+                    <h3 class="text-2xl mb-3">100% Privacy</h3>
+                    <p class="text-zinc-400">No account needed. Cash payment option. Plain packaging.</p>
                 </div>
-                <div class="p-4 bg-rtnCard rounded-lg border border-gray-900">
-                    <i class="fa-solid fa-temperature-arrow-up text-rtnBlue text-xl mb-2 block"></i>
-                    <h4 class="text-xs font-bold text-white uppercase mb-1">2. Thermal Flush</h4>
-                    <p class="text-[10px] text-gray-500 leading-normal">Regulated heat-induction cycles optimized for premium TPE compounds.</p>
+                <div class="bg-zinc-900 p-8 rounded-3xl">
+                    <i class="fa-solid fa-bacteria text-6xl text-emerald-500 mb-6"></i>
+                    <h3 class="text-2xl mb-3">Clinically Clean</h3>
+                    <p class="text-zinc-400">Every unit is sanitized between uses following strict protocols.</p>
                 </div>
-                <div class="p-4 bg-rtnCard rounded-lg border border-gray-900">
-                    <i class="fa-solid fa-sun text-rtnBlue text-xl mb-2 block"></i>
-                    <h4 class="text-xs font-bold text-white uppercase mb-1">3. Ultraviolet-C Blast</h4>
-                    <p class="text-[10px] text-gray-500 leading-normal">Deep UV-C path exposure destroying cellular organism vectors completely.</p>
-                </div>
-                <div class="p-4 bg-rtnCard rounded-lg border border-gray-900">
-                    <i class="fa-solid fa-box-tissue text-rtnBlue text-xl mb-2 block"></i>
-                    <h4 class="text-xs font-bold text-white uppercase mb-1">4. Hermetic Seal</h4>
-                    <p class="text-[10px] text-gray-500 leading-normal">Renewing powder coating and immediate medical vacuum wrapping.</p>
+                <div class="bg-zinc-900 p-8 rounded-3xl">
+                    <i class="fa-solid fa-heart text-6xl text-pink-500 mb-6"></i>
+                    <h3 class="text-2xl mb-3">Real Feel</h3>
+                    <p class="text-zinc-400">Premium TPE material feels just like the real thing — warm, soft and tight.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- RENTAL TIMING RULE SYSTEMS -->
-    <section id="rules" class="py-14 max-w-5xl mx-auto px-4 border-t border-gray-900">
-        <div class="text-center mb-10">
-            <h2 class="text-xl md:text-2xl font-black text-white uppercase tracking-tight">Flexible Hourly Billing Controls</h2>
-            <p class="text-gray-500 text-xs mt-1">Micro-allocation structures built around your accurate schedule requirements</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6 text-center">
-            <div class="p-5 bg-rtnCard rounded-lg border border-gray-900">
-                <i class="fa-solid fa-stopwatch text-xl text-rtnBlue mb-3 block"></i>
-                <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-1.5">₹500 / Hr Increments</h4>
-                <p class="text-[11px] text-gray-400 leading-relaxed">Pay exclusively for your specific utilization block. Your tracking window scales only when hand-off completes.</p>
-            </div>
-            <div class="p-5 bg-rtnCard rounded-lg border border-gray-900">
-                <i class="fa-solid fa-arrow-right-to-bracket text-xl text-rtnBlue mb-3 block"></i>
-                <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-1.5">Simplified Hand-off</h4>
-                <p class="text-[11px] text-gray-400 leading-relaxed">Repack the system into the odorless bag insert, insert it back to the outer parcel, and signal the rider app.</p>
-            </div>
-            <div class="p-5 bg-gray-950 rounded-lg border border-dashed border-rtnBlue/30">
-                <i class="fa-solid fa-triangle-exclamation text-xl text-amber-500 mb-3 block"></i>
-                <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-1.5">Overage Protocol Fee</h4>
-                <p class="text-[11px] text-gray-400 leading-relaxed">Retaining inventory past chosen windows without dashboard extensions applies a surcharge of <strong class="text-white">₹300 per additional 30 mins</strong>.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- DISCREET HANDLING ASSURANCES -->
-    <section class="py-10 max-w-4xl mx-auto px-4">
-        <div class="bg-gradient-to-r from-rtnCard to-gray-950 p-6 md:p-10 rounded-xl border border-gray-900 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div class="max-w-md text-center sm:text-left">
+    <!-- FAQ -->
+    <section id="faq" class="max-w-3xl mx-auto px-6 py-20">
+        <h2 class="heading-font text-5xl font-bold text-center mb-12">Common Questions</h2>
+        <div class="space-y-6">
+            <details class="bg-zinc-900 rounded-3xl p-6 group">
+    

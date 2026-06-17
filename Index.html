@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <center><meta charset="UTF-8"></center>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RTN Secret Rental | Next-Gen Male Wellness</title>
-    <!-- Tailwind CSS for sleek dark theme styling -->
+    <!-- Tailwind CSS for sleek dark/blue theme styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        rtnCrimson: '#E50914',
-                        rtnDark: '#050505',
-                        rtnCard: '#0F0F11',
-                        rtnGray: '#1F1F23'
+                        rtnBlue: '#00D2FF',
+                        rtnDeepBlue: '#0066FF',
+                        rtnDark: '#030712',
+                        rtnCard: '#0B111E',
+                        rtnGray: '#1F2937'
                     }
                 }
             }
@@ -23,48 +24,134 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-rtnDark text-gray-300 font-sans antialiased selection:bg-rtnCrimson selection:text-white">
+<body class="bg-rtnDark text-gray-300 font-sans antialiased selection:bg-rtnBlue selection:text-black">
 
     <!-- Top Ghost Banner -->
-    <div class="bg-rtnCrimson/10 border-b border-rtnCrimson/30 text-center py-2 text-xs font-semibold text-rtnCrimson tracking-wider uppercase px-4">
+    <div class="bg-rtnBlue/10 border-b border-rtnBlue/30 text-center py-2 text-xs font-semibold text-rtnBlue tracking-wider uppercase px-4">
         <i class="fa-solid fa-user-secret mr-2"></i> Absolute Anonymity Guaranteed. Zero Identity Footprint.
     </div>
 
     <!-- Header Navigation -->
-    <nav class="sticky top-0 z-50 bg-rtnDark/90 backdrop-blur-md border-b border-neutral-900 px-4 lg:px-8 h-20 flex items-center justify-between">
+    <nav class="sticky top-0 z-50 bg-rtnDark/90 backdrop-blur-md border-b border-gray-900 px-4 lg:px-8 h-20 flex items-center justify-between">
         <div class="flex items-center space-x-3">
-            <div class="bg-rtnCrimson w-8 h-8 rounded flex items-center justify-center text-white font-black tracking-tighter">R</div>
-            <span class="text-xl font-black tracking-widest text-white uppercase">RTN <span class="text-rtnCrimson">SECRET</span></span>
+            <div class="bg-rtnBlue w-8 h-8 rounded flex items-center justify-center text-black font-black tracking-tighter">R</div>
+            <span class="text-xl font-black tracking-widest text-white uppercase">RTN <span class="text-rtnBlue">SECRET</span></span>
         </div>
         <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest text-gray-400">
+            <a href="#catalog" class="hover:text-white transition">Available Units</a>
             <a href="#the-danger" class="hover:text-white transition">The Science</a>
-            <a href="#rules" class="hover:text-white transition">Rental Rules</a>
-            <a href="#catalog" class="hover:text-white transition">Secret Catalog</a>
+            <a href="#rules" class="hover:text-white transition">Hourly Policies</a>
         </div>
-        <a href="#catalog" class="bg-rtnCrimson hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-md transition duration-300">
+        <a href="#catalog" class="bg-rtnBlue hover:bg-cyan-500 text-black text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-md transition duration-300">
             Rent Now
         </a>
     </nav>
 
     <!-- Hero Section -->
-    <header class="py-24 text-center px-4 max-w-4xl mx-auto">
-        <span class="text-xs font-bold tracking-widest uppercase text-rtnCrimson bg-rtnCrimson/10 px-3 py-1 rounded border border-rtnCrimson/20">Upgrade Your Routine</span>
+    <header class="py-20 text-center px-4 max-w-4xl mx-auto">
+        <span class="text-xs font-bold tracking-widest uppercase text-rtnBlue bg-rtnBlue/10 px-3 py-1 rounded border border-rtnBlue/20">Upgrade Your Routine</span>
         <h1 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mt-6 mb-6">
-            Stop Using Your Hands. <br><span class="text-rtnCrimson">Experience Reality.</span>
+            Stop Using Your Hands. <br><span class="text-rtnBlue">Experience Reality.</span>
         </h1>
-        <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-6 leading-relaxed">
             Your hands are destroying your sensitivity. Step up to an elite, medically safe, completely lifelike anatomical simulation—delivered with absolute, iron-clad privacy.
         </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#catalog" class="bg-white hover:bg-rtnCrimson hover:text-white text-black font-bold uppercase tracking-wider px-8 py-4 rounded transition duration-300 text-sm shadow-xl">Browse Secret Inventory</a>
-            <a href="#rules" class="border border-neutral-800 hover:border-gray-600 font-bold uppercase tracking-wider px-8 py-4 rounded transition text-white text-sm">How It Works & Policies</a>
-        </div>
     </header>
 
+    <!-- CATALOG SECTION (MOVED TO THE TOP RIGHT UNDER THE HERO HEADER) -->
+    <section id="catalog" class="py-12 bg-rtnCard/40 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12 text-center md:text-left">
+                <h2 class="text-3xl font-black text-white uppercase tracking-tight">The Stealth Collection</h2>
+                <p class="text-gray-400 text-sm mt-1">Labelled officially on your billing statement as <strong class="text-white">"RTN Automatic Tissue Massager"</strong>.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto md:mx-0">
+                
+                <!-- SLOT 1: AVAILABLE ITEM -->
+                <div class="bg-rtnCard border border-gray-800 rounded-xl overflow-hidden flex flex-col justify-between hover:border-rtnBlue/40 transition duration-300 relative">
+                    <div class="p-6">
+                        <div class="w-full h-48 bg-rtnDark rounded-lg flex flex-col items-center justify-center text-gray-600 mb-6 relative">
+                            <i class="fa-solid fa-venus text-4xl mb-2 text-rtnBlue/40"></i>
+                            <span class="text-[11px] font-mono tracking-widest uppercase text-rtnBlue border border-rtnBlue/30 px-2 py-0.5 rounded bg-rtnBlue/5">READY TO DISPATCH</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white uppercase tracking-wide mb-1">RTN Core Torso Pro</h3>
+                        <p class="text-xs text-rtnBlue font-mono uppercase tracking-widest mb-4">Dual Input: Dual Channel Architecture</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">Ultra-realistic dual-chamber premium silicone lower torso module. Features exact structural replication including precision molded posterior and anterior simulation chambers designed to protect physical sensitivity.</p>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-gray-900 bg-rtnDark/40">
+                        <div class="my-4">
+                            <!-- Hourly Rates Info -->
+                            <div class="flex justify-between items-center text-xs uppercase tracking-wider font-bold">
+                                <span class="text-gray-400">Flexi-Hourly Rental Base:</span>
+                                <span class="text-white">₹500 <span class="text-[10px] text-gray-500">/ Per Hour</span></span>
+                            </div>
+                            
+                            <!-- 40% Premium Checkbox Toggle -->
+                            <label class="mt-3 flex items-start gap-3 bg-rtnDark p-3 rounded border border-gray-800 cursor-pointer select-none hover:border-gray-700 transition">
+                                <input type="checkbox" id="premium-toggle-1" onchange="calculateRtnPrice(1, 500.00)" class="mt-1 accent-rtnBlue h-4 w-4 rounded">
+                                <div class="text-xs">
+                                    <span class="font-bold text-white block uppercase tracking-wide">Brand New Unit (+40% Markup)</span>
+                                    <span class="text-gray-500 text-[11px]">Receive a factory-sealed, never-opened unit. Completely fresh.</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="flex justify-between items-center pt-2">
+                            <div>
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest block">Hourly Base Cost</span>
+                                <span id="rtn-price-1" class="text-2xl font-black text-rtnBlue">₹500.00</span>
+                            </div>
+                            <button onclick="bookStealth('RTN Core Torso Pro')" class="bg-rtnBlue hover:bg-cyan-500 text-black font-bold text-xs uppercase tracking-widest px-6 py-3 rounded transition">Request Private Rent</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLOT 2: COMING SOON ITEM -->
+                <div class="bg-rtnCard border border-gray-900 rounded-xl overflow-hidden flex flex-col justify-between relative opacity-30 select-none">
+                    
+                    <!-- Coming Soon Ribbon Banner Overlay -->
+                    <div class="absolute inset-0 bg-rtnDark/70 backdrop-blur-[1px] z-10 flex flex-col items-center justify-center text-center p-4">
+                        <div class="bg-gray-950 border border-gray-700 px-6 py-3 rounded-xl shadow-2xl transform -rotate-2">
+                            <i class="fa-solid fa-hourglass-half text-rtnBlue text-xl mb-1 block animate-pulse"></i>
+                            <span class="text-sm font-black text-white tracking-widest uppercase block">Coming Soon</span>
+                            <span class="text-[10px] text-gray-400 uppercase tracking-wide">Restocking Next Week</span>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="w-full h-48 bg-rtnDark rounded-lg flex flex-col items-center justify-center text-gray-800 mb-6">
+                            <i class="fa-solid fa-circle-dot text-4xl mb-2"></i>
+                            <span class="text-[11px] font-mono tracking-widest uppercase text-gray-700">LINEAR STIMULATION UNIT</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-600 uppercase tracking-wide mb-1">RTN Stealth Pocket Cylinder</h3>
+                        <p class="text-xs text-gray-700 font-mono uppercase tracking-widest mb-4">Single Input: Targeted Chamber</p>
+                        <p class="text-gray-700 text-sm leading-relaxed">Compact, hand-held premium internal textured sleeve providing uniform concentric friction. Perfect for restorative sensitivity preservation away from high-pressure manual habits.</p>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-gray-900 bg-rtnDark/40">
+                        <div class="my-4">
+                            <div class="flex justify-between items-center text-xs uppercase tracking-wider font-bold text-gray-700">
+                                <span>Flexi-Hourly Rental Base:</span>
+                                <span>₹500 / Hour</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center pt-2">
+                            <div>
+                                <span class="text-[10px] text-gray-700 uppercase tracking-widest block">Hourly Base Cost</span>
+                                <span class="text-2xl font-black text-gray-700">₹500.00</span>
+                            </div>
+                            <button disabled class="bg-gray-800 text-gray-600 font-bold text-xs uppercase tracking-widest px-6 py-3 rounded cursor-not-allowed">Locked</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- NO JUDGMENT / PRIVACY MANIFESTO -->
-    <section class="py-12 bg-gradient-to-b from-rtnDark to-rtnCard border-t border-neutral-900">
+    <section class="py-16 bg-gradient-to-b from-rtnDark to-rtnCard border-t border-gray-900">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-neutral-900 border border-neutral-800 text-rtnCrimson text-2xl mb-6">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-900 border border-gray-800 text-rtnBlue text-2xl mb-6">
                 <i class="fa-solid fa-heart"></i>
             </div>
             <h2 class="text-2xl md:text-3xl font-black text-white uppercase tracking-tight mb-4">We Do Not Judge. Ever.</h2>
@@ -75,175 +162,82 @@
     </section>
 
     <!-- The Wake-up Call: Why Hands Cause Damage -->
-    <section id="the-danger" class="py-20 bg-rtnCard border-y border-neutral-900">
+    <section id="the-danger" class="py-20 bg-rtnCard border-y border-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-2xl md:text-4xl font-extrabold text-white uppercase tracking-tight">The Danger of Manual Masturbation</h2>
-                <p class="text-rtnCrimson font-mono text-sm uppercase tracking-wider mt-2">Why your current habit is failing you</p>
+                <p class="text-rtnBlue font-mono text-sm uppercase tracking-wider mt-2">Why your current habit is failing you</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 bg-rtnDark rounded-xl border border-neutral-900 hover:border-rtnCrimson/30 transition">
-                    <div class="w-12 h-12 rounded-full bg-rtnCrimson/10 flex items-center justify-center text-rtnCrimson mb-6 text-xl"><i class="fa-solid fa-hand-fist"></i></div>
+                <div class="p-8 bg-rtnDark rounded-xl border border-gray-900 hover:border-rtnBlue/30 transition">
+                    <div class="w-12 h-12 rounded-full bg-rtnBlue/10 flex items-center justify-center text-rtnBlue mb-6 text-xl"><i class="fa-solid fa-hand-fist"></i></div>
                     <h3 class="text-lg font-bold text-white mb-3 uppercase tracking-wide">The "Death Grip" Syndrome</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">Your hand applies an unnatural, localized, high-pressure grip that no human body can replicate. Over time, this deadens neural pathways, desensitizing the penis.</p>
                 </div>
-                <div class="p-8 bg-rtnDark rounded-xl border border-neutral-900 hover:border-rtnCrimson/30 transition">
-                    <div class="w-12 h-12 rounded-full bg-rtnCrimson/10 flex items-center justify-center text-rtnCrimson mb-6 text-xl"><i class="fa-solid fa-heart-crack"></i></div>
+                <div class="p-8 bg-rtnDark rounded-xl border border-gray-900 hover:border-rtnBlue/30 transition">
+                    <div class="w-12 h-12 rounded-full bg-rtnBlue/10 flex items-center justify-center text-rtnBlue mb-6 text-xl"><i class="fa-solid fa-heart-crack"></i></div>
                     <h3 class="text-lg font-bold text-white mb-3 uppercase tracking-wide">Friction Damage & Curvature</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">Uneven manual strokes create unnatural friction patterns, causing micro-tears in the delicate tissue layer. Persistent, one-sided pressure can gradually encourage abnormal tissue bend.</p>
                 </div>
-                <div class="p-8 bg-rtnDark rounded-xl border border-neutral-900 hover:border-rtnCrimson/30 transition">
-                    <div class="w-12 h-12 rounded-full bg-rtnCrimson/10 flex items-center justify-center text-rtnCrimson mb-6 text-xl"><i class="fa-solid fa-dna"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-3 uppercase tracking-wide">True-to-Life Simulation</h3>
+                <div class="p-8 bg-rtnDark rounded-xl border border-gray-900 hover:border-rtnBlue/30 transition">
+                    <div class="w-12 h-12 rounded-full bg-rtnBlue/10 flex items-center justify-center text-rtnBlue mb-6 text-xl"><i class="fa-solid fa-dna"></i></div>
+                    <h3 class="text-lg font-bold text-white mb-3 uppercase tracking-wide">True-to-Life Experience</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">Our premium anatomical units use specialized $360^\circ$ uniform pressure distribution. They mimic exact internal human temperature and textured resistance, giving a real-life like experience.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TIMELINE / RENTAL POLICY / LATE FEES SECTION -->
+    <!-- TIMELINE / PAY-PER-HOUR TIMING RULES -->
     <section id="rules" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">The Rental Rules & Timeline</h2>
-            <p class="text-gray-500 text-sm mt-1">Simple rules to keep the system flowing smoothly for everyone</p>
+            <h2 class="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">Hourly Rental System & Policies</h2>
+            <p class="text-gray-500 text-sm mt-1">Flexible micro-renting built around your precise schedule</p>
         </div>
         <div class="grid md:grid-cols-3 gap-8 text-center">
-            <div class="p-6 bg-rtnCard rounded-xl border border-neutral-900 relative">
-                <span class="absolute top-4 right-4 text-xs font-mono text-neutral-700 font-bold">STEP 01</span>
-                <i class="fa-solid fa-calendar-days text-2xl text-rtnCrimson mb-4 block"></i>
-                <h4 class="text-white font-bold uppercase tracking-wider mb-2">3-Day Rental Cycle</h4>
-                <p class="text-xs text-gray-400 leading-relaxed">Your rental duration begins the exact afternoon the delivery tracking specifies "Delivered". Enjoy ultimate private usage for 72 full hours.</p>
+            <div class="p-6 bg-rtnCard rounded-xl border border-gray-800 relative">
+                <span class="absolute top-4 right-4 text-xs font-mono text-gray-600 font-bold">01</span>
+                <i class="fa-solid fa-clock text-2xl text-rtnBlue mb-4 block"></i>
+                <h4 class="text-white font-bold uppercase tracking-wider mb-2">₹500 / Hour Billing</h4>
+                <p class="text-xs text-gray-400 leading-relaxed">No need to pay for whole days if you only need it for a short window. Select your precise hour slot at checkout. Clock ticks from pickup confirmation.</p>
             </div>
-            <div class="p-6 bg-rtnCard rounded-xl border border-neutral-900 relative">
-                <span class="absolute top-4 right-4 text-xs font-mono text-neutral-700 font-bold">STEP 02</span>
-                <i class="fa-solid fa-truck-ramp-box text-2xl text-rtnCrimson mb-4 block"></i>
-                <h4 class="text-white font-bold uppercase tracking-wider mb-2">Return Ship-Out</h4>
-                <p class="text-xs text-gray-400 leading-relaxed">On Day 4, safely place the device back into the provided leak-proof pouch, slide it inside the return mailer, paste the prepaid label, and scan it at any local hub.</p>
+            <div class="p-6 bg-rtnCard rounded-xl border border-gray-800 relative">
+                <span class="absolute top-4 right-4 text-xs font-mono text-gray-600 font-bold">02</span>
+                <i class="fa-solid fa-truck-ramp-box text-2xl text-rtnBlue mb-4 block"></i>
+                <h4 class="text-white font-bold uppercase tracking-wider mb-2">Quick Return</h4>
+                <p class="text-xs text-gray-400 leading-relaxed">When your session ends, place the device in the included airtight bag, drop it in the secret poly-bag container, and hand it over to our immediate dispatch rider.</p>
             </div>
-            <div class="p-6 bg-neutral-950 rounded-xl border-2 border-dashed border-rtnCrimson/40 relative">
-                <span class="absolute top-4 right-4 text-xs font-mono text-rtnCrimson font-bold">CRITICAL</span>
+            <div class="p-6 bg-gray-950 rounded-xl border-2 border-dashed border-rtnBlue/40 relative">
+                <span class="absolute top-4 right-4 text-xs font-mono text-rtnBlue font-bold">OVERTIME</span>
                 <i class="fa-solid fa-triangle-exclamation text-2xl text-yellow-500 mb-4 block"></i>
-                <h4 class="text-white font-bold uppercase tracking-wider mb-2">Avoid Late Penalties</h4>
-                <p class="text-xs text-gray-400 leading-relaxed">Items not scanned by the logistics company within 24 hours post-rental expiration incur a **late penalty rate of $25.00 per day**. Please return items on time.</p>
+                <h4 class="text-white font-bold uppercase tracking-wider mb-2">Overage Fee Penalty</h4>
+                <p class="text-xs text-gray-400 leading-relaxed">Exceeding your chosen hourly block without extending it beforehand via the user panel will incur a penalty charge of **₹300 per extra half hour**.</p>
             </div>
         </div>
     </section>
 
     <!-- Stealth Delivery Block -->
     <section class="py-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-gradient-to-r from-rtnCard to-rtnGray p-8 md:p-12 rounded-2xl border border-neutral-800 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="bg-gradient-to-r from-rtnCard to-gray-900 p-8 md:p-12 rounded-2xl border border-gray-800 flex flex-col md:flex-row items-center justify-between gap-8">
             <div class="max-w-xl">
-                <span class="text-xs font-mono uppercase tracking-widest text-rtnCrimson block mb-2">Zero Exposure Delivery Protocol</span>
+                <span class="text-xs font-mono uppercase tracking-widest text-rtnBlue block mb-2">Zero Exposure Delivery Protocol</span>
                 <h3 class="text-2xl md:text-3xl font-black text-white uppercase tracking-tight mb-4">Your Identity is Completely Hidden</h3>
                 <p class="text-gray-400 text-sm leading-relaxed">
                     No cardboard boxes sitting openly on porches. Every single order is double-sealed inside a **heavy-duty, thick, opaque black plastic shipping bag**. It looks exactly like a standard clothing or standard electronics delivery.
                 </p>
             </div>
-            <div class="text-center p-6 bg-rtnDark/60 rounded-xl border border-neutral-900 min-w-[240px]">
-                <i class="fa-solid fa-bag-shopping text-5xl text-neutral-600 mb-3 block"></i>
+            <div class="text-center p-6 bg-rtnDark/60 rounded-xl border border-gray-900 min-w-[240px]">
+                <i class="fa-solid fa-bag-shopping text-5xl text-gray-600 mb-3 block"></i>
                 <span class="text-xs uppercase tracking-widest font-bold text-white block">Secure Poly-Bag</span>
                 <span class="text-[10px] text-gray-500 uppercase block mt-1">Opaque, Odorless, Tough</span>
             </div>
         </div>
     </section>
 
-    <!-- Catalog Section -->
-    <section id="catalog" class="py-20 bg-rtnCard/40 border-t border-neutral-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-12">
-                <h2 class="text-3xl font-black text-white uppercase tracking-tight">The Stealth Collection</h2>
-                <p class="text-gray-400 text-sm mt-1">Labelled officially on your billing statement as <strong class="text-white">"RTN Automatic Tissue Massager"</strong>.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
-                
-                <!-- SLOT 1: AVAILABLE ITEM -->
-                <div class="bg-rtnCard border border-neutral-800 rounded-xl overflow-hidden flex flex-col justify-between hover:border-rtnCrimson/40 transition duration-300 relative">
-                    <div class="p-6">
-                        <div class="w-full h-48 bg-rtnDark rounded-lg flex flex-col items-center justify-center text-neutral-600 mb-6 relative">
-                            <i class="fa-solid fa-venus text-4xl mb-2 text-rtnCrimson/40"></i>
-                            <span class="text-[11px] font-mono tracking-widest uppercase text-rtnCrimson border border-rtnCrimson/30 px-2 py-0.5 rounded bg-rtnCrimson/5">READY TO SHIP</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white uppercase tracking-wide mb-1">RTN Core Torso Pro</h3>
-                        <p class="text-xs text-rtnCrimson font-mono uppercase tracking-widest mb-4">Dual Input: Dual Channel Architecture</p>
-                        <p class="text-gray-400 text-sm leading-relaxed"> Ultra-realistic dual-chamber premium silicone lower torso module. Features exact structural replication including precision molded posterior and anterior simulation chambers designed to protect physical sensitivity.</p>
-                    </div>
-                    <div class="p-6 pt-0 border-t border-neutral-900 bg-rtnDark/40">
-                        <div class="my-4">
-                            <div class="flex justify-between items-center text-xs uppercase tracking-wider font-bold">
-                                <span class="text-gray-400">Sterilized Base Rental:</span>
-                                <span class="text-white">$95.00 <span class="text-[10px] text-gray-500">/ 3 Days</span></span>
-                            </div>
-                            <label class="mt-3 flex items-start gap-3 bg-rtnDark p-3 rounded border border-neutral-800 cursor-pointer select-none hover:border-neutral-700 transition">
-                                <input type="checkbox" id="premium-toggle-1" onchange="calculateRtnPrice(1, 95.00)" class="mt-1 accent-rtnCrimson h-4 w-4 rounded">
-                                <div class="text-xs">
-                                    <span class="font-bold text-white block uppercase tracking-wide">Brand New Unit (+40% Markup)</span>
-                                    <span class="text-gray-500 text-[11px]">Receive a factory-sealed, never-opened unit. Completely fresh.</span>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="flex justify-between items-center pt-2">
-                            <div>
-                                <span class="text-[10px] text-gray-500 uppercase tracking-widest block">Total Cost</span>
-                                <span id="rtn-price-1" class="text-2xl font-black text-rtnCrimson">$95.00</span>
-                            </div>
-                            <button onclick="bookStealth('RTN Core Torso Pro')" class="bg-rtnCrimson hover:bg-red-700 text-white font-bold text-xs uppercase tracking-widest px-6 py-3 rounded transition">Request Private Rent</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SLOT 2: COMING SOON ITEM (MODIFIED ARCHITECTURE) -->
-                <div class="bg-rtnCard border border-neutral-900 rounded-xl overflow-hidden flex flex-col justify-between relative opacity-40 select-none">
-                    
-                    <!-- Coming Soon Ribbon Banner Overlay -->
-                    <div class="absolute inset-0 bg-rtnDark/60 backdrop-blur-[2px] z-10 flex flex-col items-center justify-center text-center p-4">
-                        <div class="bg-neutral-900/90 border border-neutral-700 px-6 py-3 rounded-xl shadow-2xl transform -rotate-3">
-                            <i class="fa-solid fa-hourglass-half text-yellow-500 text-xl mb-1 block animate-pulse"></i>
-                            <span class="text-sm font-black text-white tracking-widest uppercase block">Coming Soon</span>
-                            <span class="text-[10px] text-gray-400 uppercase tracking-wide">Restocking New Models Next Week</span>
-                        </div>
-                    </div>
-
-                    <div class="p-6">
-                        <div class="w-full h-48 bg-rtnDark rounded-lg flex flex-col items-center justify-center text-neutral-800 mb-6">
-                            <i class="fa-solid fa-circle-dot text-4xl mb-2"></i>
-                            <span class="text-[11px] font-mono tracking-widest uppercase text-neutral-700">LINEAR STIMULATION UNIT</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-neutral-500 uppercase tracking-wide mb-1">RTN Stealth Pocket Cylinder</h3>
-                        <p class="text-xs text-neutral-600 font-mono uppercase tracking-widest mb-4">Single Input: Targeted Chamber</p>
-                        <p class="text-neutral-600 text-sm leading-relaxed">Compact, hand-held premium internal textured sleeve providing uniform concentric friction. Perfect for restorative sensitivity preservation away from high-pressure manual habits.</p>
-                    </div>
-                    <div class="p-6 pt-0 border-t border-neutral-900 bg-rtnDark/40">
-                        <div class="my-4">
-                            <div class="flex justify-between items-center text-xs uppercase tracking-wider font-bold text-neutral-600">
-                                <span>Sterilized Base Rental:</span>
-                                <span>$50.00</span>
-                            </div>
-                            <div class="mt-3 flex items-start gap-3 bg-rtnDark p-3 rounded border border-neutral-900">
-                                <input type="checkbox" disabled class="mt-1 h-4 w-4 rounded">
-                                <div class="text-xs text-neutral-600">
-                                    <span class="font-bold block uppercase tracking-wide">Brand New Unit (+40%)</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center pt-2">
-                            <div>
-                                <span class="text-[10px] text-neutral-700 uppercase tracking-widest block">Total Cost</span>
-                                <span class="text-2xl font-black text-neutral-600">$50.00</span>
-                            </div>
-                            <button disabled class="bg-neutral-800 text-neutral-600 font-bold text-xs uppercase tracking-widest px-6 py-3 rounded cursor-not-allowed">Locked</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
     <!-- Footer Disclaimer -->
-    <footer class="bg-rtnDark border-t border-neutral-900 py-12 text-center text-xs text-neutral-600">
+    <footer class="bg-rtnDark border-t border-gray-900 py-12 text-center text-xs text-gray-600">
         <p class="max-w-2xl mx-auto px-4">
-            &copy; 2026 RTN Secret Rental Group. All packages ship strictly in unmarked opaque plastic materials. All transactions process securely under generic logistics merchant titles. Late returns subject to immediate dynamic automatic overage penalties.
+            &copy; 2026 RTN Secret Rental Group. All packages ship strictly in unmarked opaque plastic materials. All transactions process securely under generic logistics merchant titles. Late returns subject to immediate dynamic hourly overage penalties.
         </p>
     </footer>
 
@@ -254,11 +248,12 @@
             const outputElement = document.getElementById(`rtn-price-${id}`);
             let currentCost = originalCost;
             if (isChecked) { currentCost = originalCost * 1.40; }
-            outputElement.innerText = `$${currentCost.toFixed(2)}`;
+            outputElement.innerText = `₹${currentCost.toFixed(2)}`;
         }
 
+        // Updated booking alert text to reflect INR and hourly mechanics
         function bookStealth(unitName) {
-            alert(`Booking initiated for "${unitName}". By processing, you agree that unreturned items beyond the 3-day window will automatically incur a $25.00/day late fee.`);
+            alert(`Booking initiated for "${unitName}". Tracked base billing at ₹500/hour. Unreturned hours past booking limit incur an immediate ₹300 overtime penalty.`);
         }
     </script>
 </body>
